@@ -1,0 +1,1 @@
+print((string.gsub("hello lua!", "%a", "%0-%0")))

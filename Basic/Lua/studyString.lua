@@ -1,0 +1,89 @@
+--print("hello world")
+
+--字符串变量两种创建方法
+-- str1 = "hello world"
+-- str2 = 'hello world'
+-- print(str1)
+-- print(str2)
+
+--两种不同的字符方式不会转译
+-- str = "the 'hello world' !"
+-- print(str)
+-- str = 'the "hello world" '
+-- print(str)
+
+--\n换行 \r回车 \\反斜杠 \"双引号 \'单引号
+-- print("hello world")
+
+--长字符串/多行字符串
+--多段字符串避免引起歧义可使用等号匹配，【==【 content 】==】
+-- local a = {}
+-- a[1] = "paige"
+-- local b = {}
+-- b[1] = 1
+-- --a[b[1]]
+-- print(a[b[1]])
+-- page = [=[
+-- 	name = a[b[1]]
+-- 	age = 18
+-- 	lang = 20
+-- ]=]
+-- print(page)
+
+--强制类型转换
+-- print(10 .. 24)
+-- print("10" + 1)
+-- print(tonumber("   -1 "))
+-- print(tonumber(" 10e4 "))
+-- --二进制字符串转换
+-- print(tonumber("100101", 2))
+-- --16进制
+-- print(tonumber("fff", 16))
+
+-----------字符串操作------------------
+-- --重复
+-- repStr = string.rep("paige", 5)
+-- print(repStr)
+-- --翻转
+-- reverseStr = string.reverse("paige")
+-- print(reverseStr)
+-- --大写字母转换为小写
+-- lowerStr = string.lower("Paige")
+-- print(lowerStr)
+-- --小写字母转换为大写
+-- upperStr = string.upper("Paige")
+-- print(upperStr)
+-- --裁剪
+-- subStr = string.sub("paige", 2, 4)
+-- print(subStr)
+-- subStr = string.sub("paige", 2, -2)
+-- print(subStr)
+-- testStr = "paigenb"
+-- print(testStr:sub(1,2))
+-- --整型转换为字符
+-- print(string.char(97))
+-- print(string.char(98, 99, 100))
+-- --字符转整型
+-- print(string.byte("abc", 2))
+-- print(string.byte("abc", 2, 3))
+-- print(string.byte("abc", -1))
+-- --字符串格式化
+-- print(string.format("my name is %s", "paige"))
+-- --查找
+-- findStr = "(100,200)|(400,500)"
+-- local pos1 = {}
+-- local pos2 = {}
+-- pos1Str = findStr:sub(1, findStr:find("|") - 1)
+-- pos2Str = findStr:sub(findStr:find("|") + 1, -1)
+-- pos1.x = pos1Str:sub(2, pos1Str:find(",") -1)
+-- pos1.y = pos1Str:sub(pos1Str:find(",") + 1, -2)
+-- pos2.x = pos2Str:sub(2, pos2Str:find(",") -1)
+-- pos2.y = pos2Str:sub(pos2Str:find(",") + 1, -2)
+
+-- print(string.format("pos1 x:%d, y:%d", pos1.x, pos1.y))
+-- print(string.format("pos2 x:%d, y:%d", pos2.x, pos2.y))
+
+-- --替换
+-- gsubStr = "paigenb"
+-- local str, num = gsubStr:gsub("b", 3)
+-- print(string.format("替换后的：%s, 替换次数：%d", str, num))
