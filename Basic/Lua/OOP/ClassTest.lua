@@ -4,6 +4,7 @@ require("OOP.MultipleInheritance.NameAccount")
 require("OOP.Privacy.PrivacyAccount")
 require("OOP.Exercise.Stack")
 require("OOP.Exercise.StackQueue")
+require("GC.ObjectAtrribute")
 
 -- local a = Account:new({name = "a"})
 -- a.balance = 100
@@ -12,10 +13,10 @@ require("OOP.Exercise.StackQueue")
 -- local b = Account:new({name = "b"})
 -- b.balance = 1000
 --print(tempAccount.limit)
-local sa = SpecialAccount:new()
-sa.limit = 10
-print(sa.limit)
-print(sa:getLimit())
+-- local sa = SpecialAccount:new()
+-- sa.limit = 10
+-- print(sa.limit)
+-- print(sa:getLimit())
 
 --local nameAccount = NameAccount:new({name = "Paige", age = 100})
 --print(nameAccount)
@@ -47,3 +48,15 @@ print(sa:getLimit())
 -- stackQueue:push(102)
 -- stackQueue:insertbottom(103)
 -- stackQueue:printContent()
+
+local p1 = Person:new()
+local p2 = Person:new()
+p1:Init("paige", 26)
+p2:Init("aoaolu", 19)
+Person.PrintAttributeName()
+Person.PrintAttributeAge()
+p1 = nil
+collectgarbage()
+Person.PrintAttributeName()
+Person.PrintAttributeAge()
+

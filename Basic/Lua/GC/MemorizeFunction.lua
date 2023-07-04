@@ -10,3 +10,18 @@ function mem_loadstring(s)
     end
     return res
 end
+
+--建立了对函数的引用
+mem_loadstring("print('hello world')")()
+
+for key, value in pairs(results) do
+    print(key, value)
+end
+
+--此时弱引用表中只有对函数对象的弱引用，此时垃圾回收会回收弱引用表中的键值对
+collectgarbage()
+
+for key, value in pairs(results) do
+    print(key, value)
+end
+
